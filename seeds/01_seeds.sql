@@ -2,7 +2,10 @@
 INSERT INTO users (name, email, password) 
 VALUES ('Edwin Gonzalez', 'edwin@gmail.com', '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u.'),
 ('Adriana Calvo', 'adriana@gmail.com', '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u.'),
-('Dania Dib', 'dania@gmail.com', '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u.');
+('Dania Dib', 'dania@gmail.com', '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u.'),
+('Sam Smith', 'sam@gmail.com', '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u.'),
+('Cristina Calvo', 'cristina@gmail.com', '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u.'),
+('Peter Piper', 'peter@gmail.com', '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u.');
 
 -- properties
 INSERT INTO properties (
@@ -23,7 +26,7 @@ INSERT INTO properties (
   active
 )
 VALUES 
-  (1, 
+  (4, 
   'Cozy Cabin', 
   'description', 
   'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pinterest.com%2Fpin%2F435652963950489253%2F&psig=AOvVaw1JMhtIWT05RGINyR4iMFqH&ust=1634238902361000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCPDAysCMyPMCFQAAAAAdAAAAABAD',
@@ -34,12 +37,12 @@ VALUES
   4,
   'Canada',
   'Side St',
-  'Rossland'
+  'Rossland',
   'British Columbia',
   'E51 8P6',
   true
   ),
-  (2,
+  (5,
   'Lux Villa',
   'description',
   'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.airbnb.ca%2Fibiza-spain%2Fstays%2Fluxury&psig=AOvVaw3ELvje0cqNxDHwb8gmQOdy&ust=1634239389655000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCJjcvqeOyPMCFQAAAAAdAAAAABAD',
@@ -49,13 +52,13 @@ VALUES
   6,
   6,
   'Spain',
-  'Muntanya Av'
+  'Muntanya Av',
   'Ibiza',
   'Islas Baleares',
   'XX& YY1',
   false
   ),
-  (3,
+  (6,
   'Student Living',
   'description',
   'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.airbnb.ca%2Flyon-france%2Fstays&psig=AOvVaw2pD8QmSaVoR4aWUQD-PzZ9&ust=1634239620920000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCPDYn5mPyPMCFQAAAAAdAAAAABAD',
@@ -68,7 +71,7 @@ VALUES
   'Rue Jules Brunard',
   'Lyon',
   'Rhone-Alpes',
-  '67000'
+  '67000',
   true
   );
 
