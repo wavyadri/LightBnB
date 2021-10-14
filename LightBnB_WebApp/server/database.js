@@ -1,13 +1,4 @@
 const db = require('../db/index');
-// connect to psql
-// const { db } = require('pg');
-
-// const db = new db({
-//   user: 'vagrant',
-//   password: '123',
-//   host: 'localhost',
-//   database: 'lightbnb',
-// });
 
 /// Users
 
