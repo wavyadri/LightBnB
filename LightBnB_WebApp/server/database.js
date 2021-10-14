@@ -1,15 +1,13 @@
-const properties = require('./json/properties.json');
-const users = require('./json/users.json');
-
+const db = require('../db/index');
 // connect to psql
-const { Pool } = require('pg');
+// const { db } = require('pg');
 
-const pool = new Pool({
-  user: 'vagrant',
-  password: '123',
-  host: 'localhost',
-  database: 'lightbnb',
-});
+// const db = new db({
+//   user: 'vagrant',
+//   password: '123',
+//   host: 'localhost',
+//   database: 'lightbnb',
+// });
 
 /// Users
 
@@ -19,7 +17,7 @@ const pool = new Pool({
  * @return {Promise<{}>} A promise to the user.
  */
 const getUserWithEmail = function (email) {
-  return pool
+  return db
     .query(`SELECT * FROM users WHERE email = $1`, [email])
     .then((result) => {
       if (result.rows.length) {
@@ -39,7 +37,7 @@ exports.getUserWithEmail = getUserWithEmail;
  * @return {Promise<{}>} A promise to the user.
  */
 const getUserWithId = function (id) {
-  return pool
+  return db
     .query(`SELECT * FROM users WHERE id = $1`, [id])
     .then((result) => {
       if (result.rows.length) {
@@ -60,7 +58,7 @@ exports.getUserWithId = getUserWithId;
  */
 const addUser = function (user) {
   const { name, password, email } = user;
-  return pool
+  return db
     .query(
       `INSERT INTO users (email, name, password) VALUES ($1, $2, $3) RETURNING *`,
       [email, name, password]
@@ -85,7 +83,7 @@ exports.addUser = addUser;
  * @return {Promise<[{}]>} A promise to the reservations.
  */
 const getAllReservations = function (guest_id, limit = 10) {
-  return pool
+  return db
     .query(
       `SELECT * FROM properties
         JOIN reservations ON properties.id = property_id
@@ -168,7 +166,7 @@ const getAllProperties = function (options, limit = 10) {
 
   console.log(queryString, queryParams);
 
-  return pool.query(queryString, queryParams).then((res) => res.rows);
+  return db.query(queryString, queryParams).then((res) => res.rows);
 };
 exports.getAllProperties = getAllProperties;
 
@@ -195,7 +193,7 @@ const addProperty = function (property) {
     number_of_bedrooms,
   } = property;
 
-  return pool
+  return db
     .query(
       `INSERT INTO properties (
         owner_id,
